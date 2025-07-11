@@ -1,0 +1,323 @@
+/* ===== Reset & Global ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #F9FAFB;
+  color: #333;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+.section-subtitle {
+  color: #009688;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 0.25rem;
+}
+
+.section-title {
+  color: #2B747D;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/* ===== Services Section ===== */
+#services .card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: cardPopUp 0.6s ease-out forwards;
+}
+
+#services .card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+#services .card img {
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+#services .card:hover img {
+  transform: scale(1.05);
+}
+
+#services .card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #2B747D;
+}
+
+#services .card-description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+#services .card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+#services .card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+#services .card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes cardPopUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ===== Testimonials Section ===== */
+#testimonial .testimonial-card {
+  display: flex;
+  align-items: center;
+  background: #DFFFF9;
+  border-radius: 15px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  transform: scale(0.95) translateY(30px);
+  animation: popupFadeIn 0.6s ease-out forwards;
+}
+
+.testimonial-avatar-wrapper {
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+.testimonial-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 5px solid white;
+  object-fit: cover;
+}
+
+.testimonial-content {
+  flex: 1;
+}
+
+.testimonial-name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0;
+  color: #111;
+}
+
+.testimonial-role {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  position: relative;
+  padding: 10px 0;
+}
+
+.testimonial-text::before {
+  content: "“";
+  font-size: 2rem;
+  color: #000;
+  margin-right: 8px;
+  vertical-align: top;
+}
+
+.testimonial-text::after {
+  content: "”";
+  font-size: 2rem;
+  color: #000;
+  margin-left: 8px;
+  vertical-align: bottom;
+}
+
+.testimonial-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.testimonial-nav .nav-arrow {
+  background-color: #009688;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.testimonial-nav .nav-arrow:hover {
+  background-color: #00796B;
+}
+
+/* ===== Responsive Testimonials ===== */
+@media (max-width: 768px) {
+  .testimonial-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .testimonial-avatar-wrapper {
+    margin-bottom: 15px;
+  }
+
+  .testimonial-avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .testimonial-nav .nav-arrow {
+    font-size: 1.2rem;
+    padding: 10px 18px;
+  }
+}
+
+/* ===== Animations ===== */
+@keyframes popupFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+#testimonial .testimonial-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+#testimonial .testimonial-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+#testimonial .testimonial-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* ===== Modal Styling ===== */
+#portfolio-modal {
+  backdrop-filter: blur(4px);
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== Buttons (Reusable) ===== */
+.btn-primary {
+  background-color: #009688;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #00796B;
+}
+
+.btn-outline {
+  border: 2px solid #009688;
+  color: #009688;
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: #009688;
+  color: white;
+}
+
+.download-link {
+  color: #009688;
+  font-weight: 500;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.download-link:hover {
+  color: #00796B;
+}
+
+/* ===== Form Fields ===== */
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px 14px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 1rem;
+  outline-color: #009688;
+}
+
+.btn-submit {
+  background-color: #009688;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #00796B;
+}
+
+/* ===== Experience Text ===== */
+.experience-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #009688;
+}
+
+.experience-label {
+  font-size: 0.9rem;
+  color: #555;
+}
